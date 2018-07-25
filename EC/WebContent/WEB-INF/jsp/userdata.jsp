@@ -65,9 +65,9 @@
 
 								<tr>
 									<td class="center"><a href="UserBuyHistoryDetail?buy_id=1" class="btn-floating btn waves-effect waves-light "> <i class="material-icons">details</i></a></td>
-									<td class="center">${resultBDB.formatDate}</td>
-									<td class="center">${resultBDB.deliveryMethodName}</td>
-									<td class="center">${resultBDB.totalPrice}</td>
+									<td class="center">${d.formatDate}</td>
+									<td class="center">${d.deliveryMethodName}</td>
+									<td class="center">${d.totalPrice}</td>
 								</tr>
 								<tr>
 									<td class="center"><a href="UserBuyHistoryDetail?buy_id=2" class="btn-floating btn waves-effect waves-light "> <i class="material-icons">details</i></a></td>
