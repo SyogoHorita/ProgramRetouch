@@ -1,6 +1,7 @@
 package ec;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import beans.BuyDataBeans;
 import beans.UserDataBeans;
@@ -37,7 +36,7 @@ public class UserData extends HttpServlet {
 			UserDataBeans udb = session.getAttribute("returnUDB") == null ? UserDAO.getUserDataBeansByUserId(userId) : (UserDataBeans) EcHelper.cutSessionAttribute(session, "returnUDB");
 
 			BuyDAO buyDao=new BuyDAO();
-			List<BuyDataBeans> d=BuyDAO.getBuyDataBeansByUserId(userId);
+			ArrayList<BuyDataBeans> d=BuyDAO.getBuyDataBeansListByUserId(userId);
 			request.setAttribute("d", d);
 
 			// 入力された内容に誤りがあったとき等に表示するエラーメッセージを格納する
